@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="1494" viewBox="0 0 1360 1494" role="img" aria-labelledby="title desc">
+<title id="title">대학 서비스 요청 흐름</title>
+<desc id="desc">DNS 질의와 주소 응답 후 사용자가 각 서비스에 직접 접속함. 학사 웹은 LB·웹 서버·앱 서버·학사 DB 순서로 연결됨. PH의 Roundcube는 MAIL01에 SMTP·IMAP으로 접속함. 외부 메일은 VIP 25번에서 MAIL01 2525번으로 전달됨. Amavis·ClamAV 검사 후 정상 메일은 10025번으로 재주입한 뒤 Dovecot으로 배달하며, 탐지 메일은 격리·폐기함. ownCloud는 별도 DB03, Pydio는 서버 내부 MariaDB와 연결됨.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L9 4.5L0 9Z" fill="#597c94"/></marker></defs>
+<rect width="1360" height="1494" fill="#f3f6fa"/>
+<g font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+<text x="44" y="51" font-size="33" fill="#173a50" font-weight="700" text-anchor="start">대학 서비스 요청 흐름</text>
+<text x="44" y="84" font-size="18" fill="#526d81" font-weight="400" text-anchor="start">서버 구성과 통신 경로 · DNS 조회, 웹 요청, 메일 검사, 연구 파일 서비스</text>
+<rect x="36" y="110" width="1288" height="192" rx="18" fill="#ffffff" stroke="#d5e0e8"/>
+<text x="58" y="146" font-size="23" fill="#193c52" font-weight="700" text-anchor="start">01  DNS 조회와 서비스 접속</text>
+<rect x="60" y="170" width="230" height="78" rx="12" fill="#ffffff" stroke="#becdd8" stroke-width="1.5"/>
+<text x="175" y="201" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">사용자</text>
+<text x="175" y="227" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">이름으로 서비스 조회</text>
+<rect x="470" y="170" width="290" height="78" rx="12" fill="#edf4fa" stroke="#8facbf" stroke-width="1.5"/>
+<text x="615" y="201" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">DNS01 · DMZ</text>
+<text x="615" y="227" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">DNS 이름 해석</text>
+<rect x="1010" y="170" width="280" height="78" rx="12" fill="#edf4fa" stroke="#8facbf" stroke-width="1.5"/>
+<text x="1150" y="201" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">서비스 접속 주소</text>
+<text x="1150" y="227" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">웹 · 메일 · 연구 파일</text>
+<path d="M290 190H462" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="375" y="181" font-size="16" fill="#36556b" font-weight="400" text-anchor="middle">① DNS 질의</text>
+<path d="M470 233H298" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="375" y="225" font-size="16" fill="#36556b" font-weight="400" text-anchor="middle">② 주소 응답</text>
+<path d="M175 248V278H1150V256" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="534" y="263" width="408" height="29" rx="6" fill="#ffffff"/>
+<text x="738" y="284" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">③ 응답받은 주소로 직접 서비스 접속</text>
+<rect x="36" y="320" width="1288" height="232" rx="18" fill="#ffffff" stroke="#d5e0e8"/>
+<text x="58" y="356" font-size="23" fill="#193c52" font-weight="700" text-anchor="start">02  학사 웹·도서관 요청</text>
+<rect x="60" y="386" width="170" height="105" rx="12" fill="#ffffff" stroke="#becdd8" stroke-width="1.5"/>
+<text x="145" y="417" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">사용자</text>
+<text x="145" y="443" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">HTTP · HTTPS</text>
+<rect x="270" y="386" width="210" height="105" rx="12" fill="#edf4fa" stroke="#8facbf" stroke-width="1.5"/>
+<text x="375" y="417" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">LB01 · LB02</text>
+<text x="375" y="443" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">VIP: 80 · 443</text>
+<text x="375" y="466" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">Keepalived · HAProxy</text>
+<rect x="520" y="386" width="210" height="105" rx="12" fill="#edf4fa" stroke="#8facbf" stroke-width="1.5"/>
+<text x="625" y="417" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">WS01 · WS02</text>
+<text x="625" y="443" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">HTTP 35439</text>
+<text x="625" y="466" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">웹 요청 중계</text>
+<rect x="770" y="386" width="240" height="105" rx="12" fill="#edf4fa" stroke="#8facbf" stroke-width="1.5"/>
+<text x="890" y="417" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">PH01 · PH02</text>
+<text x="890" y="443" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">PHP-FPM 9000</text>
+<text x="890" y="466" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">Gunicorn 8001 · 8002</text>
+<rect x="1050" y="386" width="240" height="105" rx="12" fill="#edf8f4" stroke="#6baca0" stroke-width="1.5"/>
+<text x="1170" y="417" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">DB01</text>
+<text x="1170" y="443" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">MariaDB 3306</text>
+<text x="1170" y="466" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">학사 데이터</text>
+<path d="M230 438H262" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M480 438H512" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M730 438H762" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1010 438H1042" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="640" y="525" font-size="18" fill="#496d89" font-weight="400" text-anchor="middle">DMZ  ·  LB → 웹 서버 → 앱 서버</text>
+<text x="1170" y="525" font-size="18" fill="#287d70" font-weight="400" text-anchor="middle">전산망  ·  DB01</text>
+<rect x="36" y="570" width="1288" height="195" rx="18" fill="#ffffff" stroke="#d5e0e8"/>
+<text x="58" y="606" font-size="23" fill="#193c52" font-weight="700" text-anchor="start">03  웹메일 화면과 메일함</text>
+<rect x="60" y="632" width="250" height="94" rx="12" fill="#ffffff" stroke="#becdd8" stroke-width="1.5"/>
+<text x="185" y="663" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">웹메일 사용자</text>
+<text x="185" y="689" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">LB · WS를 거쳐 화면 접속</text>
+<rect x="420" y="632" width="330" height="94" rx="12" fill="#edf4fa" stroke="#8facbf" stroke-width="1.5"/>
+<text x="585" y="663" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">PH01 · PH02</text>
+<text x="585" y="689" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">Roundcube 웹메일</text>
+<rect x="970" y="632" width="320" height="94" rx="12" fill="#edf8f4" stroke="#6baca0" stroke-width="1.5"/>
+<text x="1130" y="663" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">MAIL01</text>
+<text x="1130" y="689" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">Postfix · SMTP</text>
+<text x="1130" y="712" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">Dovecot · IMAP</text>
+<path d="M310 679H412" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="364" y="666" font-size="16" fill="#36556b" font-weight="400" text-anchor="middle">웹 요청</text>
+<path d="M750 661H962" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="860" y="649" font-size="16" fill="#36556b" font-weight="400" text-anchor="middle">SMTP · 메일 전송</text>
+<path d="M750 709H962" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="860" y="696" font-size="16" fill="#36556b" font-weight="400" text-anchor="middle">IMAP · 메일함 조회</text>
+<text x="60" y="750" font-size="16" fill="#526d81" font-weight="400" text-anchor="start">Roundcube에서 MAIL01로 SMTP·IMAP 연결을 시작함.</text>
+<rect x="36" y="785" width="1288" height="365" rx="18" fill="#ffffff" stroke="#d5e0e8"/>
+<text x="58" y="821" font-size="23" fill="#193c52" font-weight="700" text-anchor="start">04  외부 메일 수신과 첨부 검사</text>
+<rect x="60" y="850" width="200" height="88" rx="12" fill="#ffffff" stroke="#becdd8" stroke-width="1.5"/>
+<text x="160" y="881" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">외부 SMTP 발신</text>
+<text x="160" y="907" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">수신 도메인으로 전송</text>
+<rect x="300" y="850" width="250" height="88" rx="12" fill="#edf4fa" stroke="#8facbf" stroke-width="1.5"/>
+<text x="425" y="881" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">LB 공개 VIP</text>
+<text x="425" y="907" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">SMTP · TCP 25</text>
+<rect x="590" y="850" width="260" height="88" rx="12" fill="#edf4fa" stroke="#8facbf" stroke-width="1.5"/>
+<text x="720" y="881" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">MAIL01 · Postfix</text>
+<text x="720" y="907" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">2525 · PROXY protocol</text>
+<rect x="950" y="850" width="340" height="88" rx="12" fill="#edf4fa" stroke="#8facbf" stroke-width="1.5"/>
+<text x="1120" y="881" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">Amavis → ClamAV</text>
+<text x="1120" y="907" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">검사 접점 127.0.0.1:10024</text>
+<path d="M260 894H292" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M550 894H582" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M850 894H942" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1030 938V969H535V1002" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="650" y="951" width="205" height="31" rx="6" fill="#ffffff"/>
+<text x="752" y="973" font-size="17" fill="#287d70" font-weight="700" text-anchor="middle">정상 · Passed CLEAN</text>
+<path d="M1205 938V1002" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="1101" y="961" width="208" height="28" rx="6" fill="#ffffff"/>
+<text x="1205" y="982" font-size="17" fill="#936825" font-weight="700" text-anchor="middle">탐지 · INFECTED</text>
+<rect x="380" y="1010" width="310" height="92" rx="12" fill="#edf8f4" stroke="#6baca0" stroke-width="1.5"/>
+<text x="535" y="1041" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">Postfix 재주입</text>
+<text x="535" y="1067" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">127.0.0.1:10025</text>
+<rect x="730" y="1010" width="260" height="92" rx="12" fill="#edf8f4" stroke="#6baca0" stroke-width="1.5"/>
+<text x="860" y="1041" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">Dovecot 배달</text>
+<text x="860" y="1067" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">정상 메일함 전달</text>
+<rect x="1040" y="1010" width="250" height="92" rx="12" fill="#fff5e7" stroke="#c69b57" stroke-width="1.5"/>
+<text x="1165" y="1041" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">격리 · 폐기</text>
+<text x="1165" y="1067" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">Quarantined · discarded</text>
+<path d="M690 1056H722" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="60" y="1126" font-size="17" fill="#526d81" font-weight="400" text-anchor="start">검사 후 정상 메일은 재주입·배달하고, 탐지 메일은 격리·폐기함.</text>
+<rect x="36" y="1170" width="1288" height="300" rx="18" fill="#ffffff" stroke="#d5e0e8"/>
+<text x="58" y="1206" font-size="23" fill="#193c52" font-weight="700" text-anchor="start">05  연구 파일 서비스</text>
+<rect x="60" y="1300" width="220" height="90" rx="12" fill="#ffffff" stroke="#becdd8" stroke-width="1.5"/>
+<text x="170" y="1331" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">연구 사용자</text>
+<text x="170" y="1357" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">HTTPS 파일 이용</text>
+<rect x="420" y="1240" width="300" height="90" rx="12" fill="#edf4fa" stroke="#8facbf" stroke-width="1.5"/>
+<text x="570" y="1271" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">HD01 · ownCloud</text>
+<text x="570" y="1297" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">파일: HD01 / Redis: 로컬 6379</text>
+<rect x="970" y="1240" width="320" height="90" rx="12" fill="#edf8f4" stroke="#6baca0" stroke-width="1.5"/>
+<text x="1130" y="1271" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">DB03 · 별도 MariaDB</text>
+<text x="1130" y="1297" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">3306 · TLS / 파일 메타데이터</text>
+<rect x="420" y="1350" width="300" height="90" rx="12" fill="#edf4fa" stroke="#8facbf" stroke-width="1.5"/>
+<text x="570" y="1381" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">HD02 · Pydio</text>
+<text x="570" y="1407" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">HTTPS 443 / 전용 앱 계정</text>
+<rect x="970" y="1350" width="320" height="90" rx="12" fill="#edf8f4" stroke="#6baca0" stroke-width="1.5"/>
+<text x="1130" y="1381" font-size="21" fill="#193c52" font-weight="700" text-anchor="middle">HD02 내부 MariaDB</text>
+<text x="1130" y="1407" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">127.0.0.1:3306</text>
+<path d="M280 1345H350" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round"/>
+<path d="M350 1345V1285H412" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M350 1345V1395H412" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M720 1285H962" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="845" y="1270" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">본교 · 별도 DB 연결</text>
+<path d="M720 1395H962" fill="none" stroke="#597c94" stroke-width="2.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="845" y="1380" font-size="17" fill="#36556b" font-weight="400" text-anchor="middle">분교 · 서버 내부 연결</text>
+</g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="749" viewBox="0 0 1200 749" role="img" aria-labelledby="title desc">
+  <title id="title">SCN-01 인증 우회와 회원 데이터 조회</title>
+  <desc id="desc">로그인 입력과 검색 입력을 두 경로로 구분한 구성도. 로그인은 인증 우회 후 관리자 표시를 확인함. 검색은 스키마·회원 데이터 응답을 확인함. 요청 결과 카운터는 5건, 화면에서 식별한 테스트 계정은 4개임. 전체 회원 수는 미산정.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9" fill="#68869c"/></marker>
+  </defs>
+  <g font-family="Malgun Gothic, Noto Sans KR, sans-serif">
+    <rect width="1200" height="749" rx="20" fill="#f3f6f9"/>
+    <text x="42" y="51" font-size="14" fill="#487285" font-weight="700">WEB SECURITY / SQL INJECTION</text>
+    <text x="42" y="99" font-size="31" fill="#16364b" font-weight="700">SCN-01 · 인증 우회와 회원 데이터 조회</text>
+    <text x="42" y="135" font-size="18" fill="#52677b">로그인 인증 우회 · 검색을 통한 스키마·회원 데이터 조회</text>
+
+    <rect x="32" y="175" width="1136" height="194" rx="14" fill="#ffffff" stroke="#d5e0e8"/>
+    <text x="56" y="214" font-size="19" fill="#16364b" font-weight="700">01 · 로그인 인증 경계</text>
+    <rect x="56" y="239" width="294" height="98" rx="10" fill="#e8eff4"/>
+    <text x="76" y="273" font-size="21" fill="#16364b" font-weight="700">로그인 입력</text>
+    <text x="76" y="308" font-size="16" fill="#344f63">정상 실패 요청과 변조 요청 비교</text>
+    <path d="M366 288H433" fill="none" stroke="#68869c" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="451" y="239" width="294" height="98" rx="10" fill="#e8eff4"/>
+    <text x="471" y="273" font-size="21" fill="#16364b" font-weight="700">인증 처리 응답</text>
+    <text x="471" y="308" font-size="16" fill="#344f63">세션 발급 여부 확인</text>
+    <path d="M761 288H828" fill="none" stroke="#68869c" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="846" y="239" width="298" height="98" rx="10" fill="#e5f1ee"/>
+    <text x="866" y="273" font-size="21" fill="#1e5a4e" font-weight="700">계정 표시</text>
+    <text x="866" y="308" font-size="16" fill="#344f63">인증 우회 후 관리자 표시 확인</text>
+
+    <rect x="32" y="391" width="1136" height="218" rx="14" fill="#ffffff" stroke="#d5e0e8"/>
+    <text x="56" y="430" font-size="19" fill="#16364b" font-weight="700">02 · 검색 데이터 조회 경계</text>
+    <rect x="56" y="455" width="294" height="122" rx="10" fill="#e8eff4"/>
+    <text x="76" y="489" font-size="21" fill="#16364b" font-weight="700">검색 입력 q</text>
+    <text x="76" y="524" font-size="16" fill="#344f63">정상 검색 결과와 DB 오류 비교</text>
+    <path d="M366 516H433" fill="none" stroke="#68869c" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="451" y="455" width="294" height="122" rx="10" fill="#e8eff4"/>
+    <text x="471" y="489" font-size="21" fill="#16364b" font-weight="700">스키마 조회</text>
+    <text x="471" y="524" font-size="16" fill="#344f63">테이블·컬럼 응답 확인</text>
+    <path d="M761 516H828" fill="none" stroke="#68869c" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="846" y="455" width="298" height="122" rx="10" fill="#e5f1ee"/>
+    <text x="866" y="489" font-size="21" fill="#1e5a4e" font-weight="700">회원 데이터 응답</text>
+    <text x="866" y="524" font-size="16" fill="#344f63">요청 결과 카운터 5건</text>
+    <text x="866" y="551" font-size="16" fill="#344f63">화면에서 식별한 테스트 계정 4개</text>
+
+    <rect x="32" y="631" width="1136" height="94" rx="12" fill="#e8eff4"/>
+    <text x="56" y="668" font-size="18" fill="#16364b" font-weight="700">검증 결과</text>
+    <text x="195" y="668" font-size="18" fill="#344f63">로그인 인증 우회 · 테이블·컬럼 조회 · 회원 데이터 응답</text>
+    <text x="56" y="701" font-size="16" fill="#52677b">입력점과 응답 화면을 기준으로 로그인과 검색 결과를 구분함.</text>
+  </g>
+</svg>

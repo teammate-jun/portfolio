@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="688" viewBox="0 0 1200 688" role="img" aria-labelledby="title desc">
+<title id="title">웹 입력점에서 실제 영향까지</title><desc id="desc">레드팀 점검과 결과 분석 · 시나리오별 입력점과 관측 결과</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#7690a5"/></marker></defs>
+<g font-family="Malgun Gothic, Noto Sans KR, sans-serif">
+<rect width="1200" height="688" rx="20" fill="#f3f6f9"/>
+<text x="42" y="51" font-size="14" fill="#487285" font-weight="700">WEB SECURITY / SCENARIO RESULTS</text>
+<text x="42" y="98" font-size="32" fill="#16364b" font-weight="700">웹 입력점에서 실제 영향까지</text>
+<text x="42" y="133" font-size="18" fill="#52677b" font-weight="400">레드팀 점검과 결과 분석 · 시나리오별 입력점과 관측 결과</text>
+<text x="42" y="183" font-size="16" fill="#52677b" font-weight="700">시나리오</text>
+<text x="208" y="183" font-size="16" fill="#52677b" font-weight="700">입력·접근 경계</text>
+<text x="515" y="183" font-size="16" fill="#52677b" font-weight="700">확인한 영향</text>
+<text x="866" y="183" font-size="16" fill="#52677b" font-weight="700">확인 증적</text>
+<rect x="32" y="202" width="1136" height="86" rx="12" fill="#ffffff" stroke="#d5e0e8"/>
+<rect x="44" y="216" width="144" height="58" rx="12" fill="#e8eff4" stroke="#e8eff4"/>
+<text x="56" y="252" font-size="17" fill="#16364b" font-weight="700">01 / SQLi</text>
+<text x="208" y="252" font-size="20" fill="#24374a" font-weight="400">로그인 · 검색 입력</text>
+<path d="M465 245H493" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="515" y="252" font-size="20" fill="#24374a" font-weight="400">인증 상태 · 회원 데이터</text>
+<path d="M816 245H844" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="866" y="252" font-size="18" fill="#24374a" font-weight="400">권한 표시 · 실제 데이터 응답</text>
+<rect x="32" y="305" width="1136" height="86" rx="12" fill="#ffffff" stroke="#d5e0e8"/>
+<rect x="44" y="319" width="144" height="58" rx="12" fill="#e8eff4" stroke="#e8eff4"/>
+<text x="56" y="355" font-size="17" fill="#16364b" font-weight="700">02 / 콘텐츠</text>
+<text x="208" y="355" font-size="20" fill="#24374a" font-weight="400">게시글 · 후기 콘텐츠</text>
+<path d="M465 348H493" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="515" y="355" font-size="20" fill="#24374a" font-weight="400">쿠폰 유도 · 피싱 재현</text>
+<path d="M816 348H844" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="866" y="355" font-size="18" fill="#24374a" font-weight="400">저장·출력 · 별도 입력 흐름</text>
+<rect x="32" y="408" width="1136" height="86" rx="12" fill="#ffffff" stroke="#d5e0e8"/>
+<rect x="44" y="422" width="144" height="58" rx="12" fill="#e8eff4" stroke="#e8eff4"/>
+<text x="56" y="458" font-size="17" fill="#16364b" font-weight="700">03 / 업로드</text>
+<text x="208" y="458" font-size="20" fill="#24374a" font-weight="400">프로필 이미지 처리</text>
+<path d="M465 451H493" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="515" y="458" font-size="20" fill="#24374a" font-weight="400">웹 서버 실행 · 셸 연결</text>
+<path d="M816 451H844" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="866" y="458" font-size="18" fill="#24374a" font-weight="400">파일 수용·실행 · 연결 결과</text>
+<rect x="32" y="511" width="1136" height="86" rx="12" fill="#ffffff" stroke="#d5e0e8"/>
+<rect x="44" y="525" width="144" height="58" rx="12" fill="#e8eff4" stroke="#e8eff4"/>
+<text x="56" y="561" font-size="17" fill="#16364b" font-weight="700">04 / 인증</text>
+<text x="208" y="561" font-size="20" fill="#24374a" font-weight="400">반복 로그인 요청</text>
+<path d="M465 554H493" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="515" y="561" font-size="20" fill="#24374a" font-weight="400">최종 로그인 상태</text>
+<path d="M816 554H844" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="866" y="561" font-size="18" fill="#24374a" font-weight="400">응답 차이 · 인증된 계정</text>
+<text x="42" y="642" font-size="18" fill="#52677b" font-weight="400">로그 대조: 웹 접근 로그 · WAF/IDS 이벤트 · DB 감사 로그 · OS 실행 기록</text>
+</g></svg>

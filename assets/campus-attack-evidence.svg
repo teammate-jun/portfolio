@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="744" viewBox="0 0 1200 744" role="img" aria-labelledby="title desc">
+<title id="title">대학 서비스 보안 점검 범위</title><desc id="desc">관리 단말·학사 DB, 연구 자료, 네트워크 가용성의 점검 구성과 관측 결과. 청록 상자는 관측 결과, 베이지 상자는 공유·백업 및 복구 점검 항목을 표시함.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#7690a5"/></marker></defs>
+<g font-family="Malgun Gothic, Noto Sans KR, sans-serif">
+<rect width="1200" height="744" rx="20" fill="#f3f6f9"/>
+<text x="42" y="51" font-size="14" fill="#487285" font-weight="700">CAMPUS SECURITY / ASSESSMENT SCOPE</text>
+<text x="42" y="98" font-size="32" fill="#16364b" font-weight="700">대학 서비스 보안 점검 범위</text>
+<text x="42" y="133" font-size="18" fill="#52677b" font-weight="400">관리 단말·학사 DB, 연구 자료, 네트워크 가용성의 점검 구성</text>
+<text x="42" y="183" font-size="16" fill="#52677b" font-weight="700">보호 관점</text>
+<text x="223" y="183" font-size="16" fill="#52677b" font-weight="700">진입·중간 단계</text>
+<text x="555" y="183" font-size="16" fill="#52677b" font-weight="700">서비스·자산</text>
+<text x="887" y="183" font-size="16" fill="#52677b" font-weight="700">결과·점검 항목</text>
+<rect x="32" y="206" width="1136" height="126" rx="12" fill="#ffffff" stroke="#d5e0e8"/>
+<text x="54" y="256" font-size="23" fill="#16364b" font-weight="700">무결성</text>
+<text x="54" y="286" font-size="15" fill="#52677b" font-weight="400">SCN-01</text>
+<rect x="211" y="222" width="276" height="94" rx="12" fill="#e9f2f4" stroke="#bad0d9"/>
+<text x="228" y="258" font-size="21" fill="#16364b" font-weight="700">메일 · 관리 단말</text>
+<text x="228" y="288" font-size="17" fill="#52677b" font-weight="400">수신·권한 결과 관측</text>
+<rect x="543" y="222" width="276" height="94" rx="12" fill="#e9f2f4" stroke="#bad0d9"/>
+<text x="560" y="258" font-size="21" fill="#16364b" font-weight="700">Cacti · 서비스 계정</text>
+<text x="560" y="288" font-size="17" fill="#52677b" font-weight="400">관리 기능·DB 접근</text>
+<rect x="875" y="222" width="276" height="94" rx="12" fill="#e9f2f4" stroke="#bad0d9"/>
+<text x="892" y="258" font-size="21" fill="#16364b" font-weight="700">테스트 수강 레코드</text>
+<text x="892" y="288" font-size="17" fill="#52677b" font-weight="400">5건의 전후 변화</text>
+<path d="M493 269H531" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M825 269H863" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="32" y="353" width="1136" height="126" rx="12" fill="#ffffff" stroke="#d5e0e8"/>
+<text x="54" y="403" font-size="23" fill="#16364b" font-weight="700">기밀성</text>
+<text x="54" y="433" font-size="15" fill="#52677b" font-weight="400">SCN-02</text>
+<rect x="211" y="369" width="276" height="94" rx="12" fill="#e9f2f4" stroke="#bad0d9"/>
+<text x="228" y="405" font-size="21" fill="#16364b" font-weight="700">사용자 실행 · 단말</text>
+<text x="228" y="435" font-size="17" fill="#52677b" font-weight="400">등록·입력 이벤트 관측</text>
+<rect x="543" y="369" width="276" height="94" rx="12" fill="#e9f2f4" stroke="#bad0d9"/>
+<text x="560" y="405" font-size="21" fill="#16364b" font-weight="700">FTP 접점</text>
+<text x="560" y="435" font-size="17" fill="#52677b" font-weight="400">디렉터리 목록 관측</text>
+<rect x="875" y="369" width="276" height="94" rx="12" fill="#fff6e8" stroke="#c99e61" stroke-dasharray="7 5"/>
+<text x="892" y="405" font-size="21" fill="#16364b" font-weight="700">공유 · 구성 백업</text>
+<text x="892" y="435" font-size="17" fill="#52677b" font-weight="400">SMB 접근 · TFTP 파일 수신</text>
+<path d="M493 416H531" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M825 416H863" fill="none" stroke="#7690a5" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<rect x="32" y="500" width="1136" height="126" rx="12" fill="#ffffff" stroke="#d5e0e8"/>
+<text x="54" y="550" font-size="23" fill="#16364b" font-weight="700">가용성</text>
+<text x="54" y="580" font-size="15" fill="#52677b" font-weight="400">SCN-03</text>
+<rect x="211" y="516" width="276" height="94" rx="12" fill="#e9f2f4" stroke="#bad0d9"/>
+<text x="228" y="552" font-size="21" fill="#16364b" font-weight="700">단말 측 관측</text>
+<text x="228" y="582" font-size="17" fill="#52677b" font-weight="400">보호기능 변경 조건 · 1대</text>
+<rect x="543" y="516" width="276" height="94" rx="12" fill="#e9f2f4" stroke="#bad0d9"/>
+<text x="560" y="552" font-size="21" fill="#16364b" font-weight="700">관제 측 관측</text>
+<text x="560" y="582" font-size="17" fill="#52677b" font-weight="400">7개 DOWN·ICMP 손실</text>
+<rect x="875" y="516" width="276" height="94" rx="12" fill="#fff6e8" stroke="#c99e61" stroke-dasharray="7 5"/>
+<text x="892" y="552" font-size="21" fill="#16364b" font-weight="700">정상 통신 · 복구 점검</text>
+<text x="892" y="582" font-size="17" fill="#52677b" font-weight="400">ICMP · 게이트웨이 · 앱 응답</text>
+<text x="42" y="680" font-size="18" fill="#52677b" font-weight="400">청록: 관측 결과   /   베이지: 공유·백업 및 복구 점검 항목</text>
+<text x="42" y="713" font-size="17" fill="#52677b" font-weight="400">SCN-03의 단말 세션과 장비 응답은 별도의 관측 기록</text>
+</g></svg>
